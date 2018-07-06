@@ -32,6 +32,17 @@ public class User {
         this.email = email;
         this.accounts = accounts;
     }
+    
+    public User(int id, String firstName, String lastName,
+            int age, String address, String phoneNumber, String email) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.address = address;
+    this.phoneNumber = phoneNumber;
+    this.email = email;
+}
 
     public User(String firstName, String lastName, int age, String address,
                 String phoneNumber, String email, Set<Integer> accounts) {
