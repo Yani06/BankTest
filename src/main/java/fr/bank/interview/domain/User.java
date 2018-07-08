@@ -13,47 +13,23 @@ public class User {
     private String firstName;
     private String lastName;
     private int age;
-    private String address;
+	private Address address;
     private String phoneNumber;
     private String email;
     private Set<Integer> accounts = new TreeSet<>();
 
     public User() {}
 
-    public User(int id, String firstName, String lastName,
-                int age, String address, String phoneNumber,
-                String email, Set<Integer> accounts) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.accounts = accounts;
-    }
-    
-    public User(int id, String firstName, String lastName,
-            int age, String address, String phoneNumber, String email) {
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.address = address;
-    this.phoneNumber = phoneNumber;
-    this.email = email;
-}
-
-    public User(String firstName, String lastName, int age, String address,
-                String phoneNumber, String email, Set<Integer> accounts) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.accounts = accounts;
-    }
+	public User(int id, String firstName, String lastName,
+			int age, String phone, String email, Address address) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;		
+		this.phoneNumber = phone;
+		this.email = email;
+		this.address = address;
+	}
 
     public int getId() {
         return id;
@@ -87,11 +63,11 @@ public class User {
         this.age = age;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
@@ -118,4 +94,11 @@ public class User {
     public void setAccounts(Set<Integer> accounts) {
         this.accounts = accounts;
     }
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", address="
+				+ address + ", phoneNumber=" + phoneNumber + ", email=" + email + ", accounts=" + accounts + "]";
+	}
+    
 }
